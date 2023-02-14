@@ -13,4 +13,6 @@
     <string name="Name">Nome</string>
     <string name="present">Presença</string>
     <string name="save">salvar</string>
+    <string name="presente">Presente</string>
+    <string name="ausente">Ausente</string>
 </resources>

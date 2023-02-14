@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_margin="16dp"
-    tools:context=".GuestFormActivity">
+    android:padding="16dp"
+    tools:context=".View.GuestFormActivity">
 
     <TextView
         android:id="@+id/text_name"
@@ -45,7 +45,7 @@
             android:id="@+id/radio_present"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Presente"
+            android:text="@string/presente"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/text_present" />
 
@@ -53,7 +53,7 @@
             android:id="@+id/radio_absent"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Ausente"
+            android:text="@string/ausente"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/radio_present" />
 
