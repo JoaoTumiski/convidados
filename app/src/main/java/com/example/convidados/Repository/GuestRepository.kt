@@ -25,13 +25,13 @@ class GuestRepository private constructor(context: Context) {
 
     fun insert(guest: GuestModel): Boolean {
         return try {
-            val db = guestDataBase.writableDatabase
-
             val presence = if (guest.presence) 1 else 0
+            val db = guestDataBase.writableDatabase
 
             val values = ContentValues()
             values.put(DataBaseConstants.GUEST.COLUMNS.PRESENCE, presence)
             values.put(DataBaseConstants.GUEST.COLUMNS.NAME, guest.name)
+
             db.insert(DataBaseConstants.GUEST.TABLE_NAME, null, values)
 
             true

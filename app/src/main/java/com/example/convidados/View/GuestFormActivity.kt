@@ -20,7 +20,7 @@ class GuestFormActivity : AppCompatActivity(), View.OnClickListener{
         binding = ActivityGuestFormBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        viewModel = ViewModelProvider(this).get(GuestFormViewModel::class.java)
+        viewModel = ViewModelProvider(this)[GuestFormViewModel::class.java]
 
         binding.ButtonSave.setOnClickListener(this)
         binding.radioPresent.isChecked = true
