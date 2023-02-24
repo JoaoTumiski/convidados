@@ -11,7 +11,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.convidados.Constants.DataBaseConstants
 import com.example.convidados.View.Adapter.GuestsAdapter
 import com.example.convidados.View.Listner.OnGuestListner
-import com.example.convidados.ViewModel.AllGuestsViewModel
+import com.example.convidados.ViewModel.GuestsViewModel
 import com.example.convidados.databinding.FragmentAllGuestsBinding
 
 class AllGuestsFragment : Fragment() {
@@ -20,7 +20,7 @@ class AllGuestsFragment : Fragment() {
 
     private val binding get() = _binding!!
 
-    private lateinit var viewModel: AllGuestsViewModel
+    private lateinit var viewModel: GuestsViewModel
 
     private val adapter = GuestsAdapter()
 
@@ -28,15 +28,12 @@ class AllGuestsFragment : Fragment() {
         inflater: LayoutInflater,
         container: ViewGroup?, b: Bundle?
     ): View {
-        viewModel = ViewModelProvider(this).get(AllGuestsViewModel::class.java)
+        viewModel = ViewModelProvider(this).get(GuestsViewModel::class.java)
         _binding = FragmentAllGuestsBinding.inflate(inflater, container, false)
 
         //layout
-        binding.recyclerAllGuests.layoutManager = LinearLayoutManager(context)
-
-        //adapter
-
-        binding.recyclerAllGuests.adapter = adapter
+        binding.recyclerGuests.layoutManager = LinearLayoutManager(context)
+        binding.recyclerGuests.adapter = adapter
 
         val listener = object : OnGuestListner{
             override fun onClick(id: Int) {
